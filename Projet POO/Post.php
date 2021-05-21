@@ -35,14 +35,21 @@ class Post{
         return $this->content;
     }
 
+    public function setId($id){
+        $id = (int) $id;
+        if ($id > 0) {
+            $this->id = $id;
+        }
+    }
+
     public function setTitle($title){
-        if (is_string($title)) {
+        if (is_string($title) && strlen($title) > 3 && strlen($title) < 50 ) {
             $this->title = $title;
         }
     }
 
     public function setContent($content){
-        if (is_string($content) && strlen($content) < 2000) {
+        if (is_string($content) && strlen($content) > 10 && strlen($content) < 2000 ) {
             $this->content = $content;
         }
     }

@@ -1,7 +1,7 @@
 <?php
 
 function chargerClass($class){
-    require "$class.php";
+  require "$class.php";
 }
 
 spl_autoload_register("chargerClass");
@@ -22,15 +22,22 @@ $manager->create($first);*/
 ?>
 <h1>Tous les articles</h1>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+<?php
+  $manager = new PostsManager();
+  foreach ($manager->getAll() as $post) {
+    ?>
+    <div class="card mt-3 ms-5" style="width: 30rem;">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $post->getTitle() ?></h5>
+        <p class="card-text"><?php echo $post->getContent() ?></p>
+        <a href="./update.php" class="card-link btn btn-warning">Modifier</a>
+        <a href="#" class="card-link btn btn-success">Commenter</a>
+        <a href="./delete.php?id=<?php echo $post->getId() ?>" class="card-link btn btn-danger">Supprimer</a>
+      </div>
+    </div>
+    <?php  
+  }
+?>
 
 
 <?php

@@ -27,16 +27,16 @@ class PostsManager{
        $req = $this->db->prepare("SELECT * FROM `post` WHERE id = :id");
        $req->bindValue(":id", $id, PDO::PARAM_INT);
        $req->execute();
-       $data = $req->fetch();
-       return new Post($data);
+       $post = $req->fetch();
+       return new Post($post);
     }
 
     public function getAll(){
         $posts = [];
-        foreach ($this->db->query("SELECT * FROM `post` ORDER BY id DESC") as $data){
-            $posts[] = new Post($data);
+        foreach ($this->db->query("SELECT * FROM `post` ORDER BY id DESC") as $post){
+            $posts[] = new Post($post);
         }
-        return $data;
+        return $posts;
     }
 
     public function update(Post $post){
