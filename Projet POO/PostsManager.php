@@ -41,6 +41,7 @@ class PostsManager{
 
     public function update(Post $post){
         $req = $this->db->prepare("UPDATE `post` SET title = :title, content = :content WHERE id = :id");
+        $req->bindValue(":id", $post->getId(), PDO::PARAM_INT);
         $req->bindValue(":title", $post->getTitle(), PDO::PARAM_STR);
         $req->bindValue(":content", $post->getContent(), PDO::PARAM_STR);
         $req->execute();

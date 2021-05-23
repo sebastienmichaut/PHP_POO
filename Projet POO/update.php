@@ -9,14 +9,15 @@ include "./header.php";
 
 $manager= new PostsManager();
 $post = $manager->get($_GET['id']);
-
-echo $post->getContent();
-// echo $post->title;
-// if ($_POST) {
-//     $post = new Post($_POST);
-//     $manager->update($post);
-//     header('Location:./index.php');
-// }
+if ($_POST) {
+    $post = new Post([
+        'id' => $post->getId(),
+        'title' => $_POST['title'],
+        'content' => $_POST['content'] 
+    ]);
+    $manager->update($post);
+    header('Location:./index.php');
+}
 ?>
 <h1>Modifier un article</h1>
 
