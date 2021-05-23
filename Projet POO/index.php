@@ -30,8 +30,8 @@ $manager->create($first);*/
       <div class="card-body">
         <h5 class="card-title"><?php echo $post->getTitle() ?></h5>
         <p class="card-text"><?php echo $post->getContent() ?></p>
+        <p><a href="./readPost.php?id=<?php echo $post->getId() ?>">Voir plus...</a></p>
         <a href="./update.php?id=<?php echo $post->getId() ?>" class="card-link btn btn-warning">Modifier</a>
-        <a href="#" class="card-link btn btn-success">Commenter</a>
         <a href="./delete.php?id=<?php echo $post->getId() ?>" class="card-link btn btn-danger">Supprimer</a>
       </div>
     </div>

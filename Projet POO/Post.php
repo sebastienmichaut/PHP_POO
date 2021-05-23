@@ -43,7 +43,7 @@ class Post{
     }
 
     public function setTitle($title){
-        if (is_string($title) && strlen($title) > 3 && strlen($title) < 50 ) {
+        if (is_string($title) && strlen($title) > 3 && strlen($title) < 80 ) {
             $this->title = $title;
         }
     }
