@@ -21,15 +21,17 @@ $post = $manager->get($_GET['id']);
   </div>
 <h2>Les commentaires</h2>
 <?php
+
 $comments = new PostsManager();
-  foreach ($comments->getAllComment() as $comment) {
-?>
-  <div class="card mt-3 mb-5 ms-5" style="width: 30rem;">
-    <div class="card-body">
-      <p class="card-text"><?php echo $comment->getCommentContent() ?></p>
-    </div>
-  </div>  
-    <?php  
+
+  foreach ($comments->getAllComment($_GET['id']) as $comment) {
+      ?>
+        <div class="card mt-3 mb-1 ms-5" style="width: 30rem;">
+          <div class="card-body">
+            <p class="card-text"><?php echo $comment->getCommentContent() ?></p>
+          </div>
+        </div>  
+      <?php        
   }
 ?>
 
