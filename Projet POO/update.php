@@ -38,3 +38,8 @@ if ($_POST) {
         </form>
     </div>
 </div>
+
+
+<?php
+include "./footer.php"
+?>

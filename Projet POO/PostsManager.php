@@ -24,7 +24,7 @@ class PostsManager{
     }
 
     public function createComment(Comment $comment){
-        $req = $this->db->prepare("INSERT INTO `comment` (commentContent) VALUES (:commentContent) WHERE id_post = :id_post");
+        $req = $this->db->prepare("INSERT INTO `comment` (id_post, commentContent) VALUES (:id_post, :commentContent)");
         $req->bindValue(":id_post", $comment->getId_post(), PDO::PARAM_INT);
         $req->bindValue(":commentContent", $comment->getCommentContent(), PDO::PARAM_STR);
         $req->execute();
@@ -48,7 +48,7 @@ class PostsManager{
 
     public function getAllComment(){
         $comments = [];
-        foreach ($this->db->query("SELECT * FROM `comment` WHERE id_post = :id_post ORDER BY id DESC") as $data){
+        foreach ($this->db->query("SELECT * FROM `comment` WHERE id_post = :id_post  ORDER BY id DESC") as $data){
             $comments[] = new Comment($data);
         }
         return $comments;
