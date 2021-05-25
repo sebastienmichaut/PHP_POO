@@ -30,7 +30,7 @@ if ($_POST) {
                         <textarea class="form-control" rows="5" id="content" name="content" placeholder="Ecrivez votre article ici"></textarea>
                     </div>
                     <div class="mb-1">
-                        <button type="submit" class="btn btn-primary">Publier</button>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-eye me-2"></i>Publier</button>
                     </div>
                 </form>
             </div>

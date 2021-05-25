@@ -20,7 +20,7 @@ if ($_POST) {
 }
 ?>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="card mt-3 col-xs-3 col-sm-offset-3 col-md-offset-2 col-md-7">
             <h1>Modifier un article</h1>
             <div class="card-body">
@@ -34,7 +34,7 @@ if ($_POST) {
                         <textarea class="form-control" rows="5" id="content" name="content" placeholder="Modifiez votre article ici"></textarea>
                     </div>
                     <div class="mb-1">
-                        <button type="submit" class="btn btn-primary">Publier</button>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-eye me-2"></i>Publier</button>
                     </div>
                 </form>
             </div>

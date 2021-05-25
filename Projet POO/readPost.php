@@ -17,7 +17,7 @@ $post = $manager->get($_GET['id']);
       <div class="card-body">
         <h5 class="card-title"><?php echo $post->getTitle() ?></h5>
         <p class="card-text"><?php echo $post->getContent() ?></p>
-        <a href="./createComment.php?id=<?php echo $post->getId() ?>" class="card-link btn btn-success">Commenter</a>
+        <a href="./createComment.php?id=<?php echo $post->getId() ?>" class="card-link btn btn-success"><i class="far fa-comment-dots me-2"></i>Commenter</a>
       </div>
     </div>
   </div>
