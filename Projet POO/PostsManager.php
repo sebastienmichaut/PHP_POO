@@ -63,7 +63,7 @@ class PostsManager{
             $comments[] = new Comment($data);
         }
         return $comments;
-    }    
+    }   
 
     public function update(Post $post){
         $req = $this->db->prepare("UPDATE `post` SET title = :title, content = :content WHERE id = :id");

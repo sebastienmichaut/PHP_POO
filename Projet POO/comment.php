@@ -7,6 +7,7 @@ class Comment{
     private $id;
     private $id_post;
     private $commentContent;
+    private $dateComment;
 
     // Models
 
@@ -35,6 +36,10 @@ class Comment{
         return $this->commentContent;
     }
 
+    public function getDateComment(){
+        return $this->dateComment;
+    }
+
     public function setId($id){
         $id = (int) $id;
         if ($id > 0) {
@@ -54,4 +59,10 @@ class Comment{
             $this->commentContent = $commentContent;
         }
     }
+
+    public function setDateComment($dateComment){
+        $this->dateComment = $dateComment;
+        return $this;
+    }
+
   }

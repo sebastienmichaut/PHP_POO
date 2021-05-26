@@ -7,6 +7,7 @@ class Post{
     private $id;
     private $title;
     private $content;
+    private $date;
 
     // Models
 
@@ -35,6 +36,10 @@ class Post{
         return $this->content;
     }
 
+    public function getDate(){
+        return $this->date;
+    }
+
     public function setId($id){
         $id = (int) $id;
         if ($id > 0) {
@@ -52,5 +57,10 @@ class Post{
         if (is_string($content) && strlen($content) > 10 && strlen($content) < 2000 ) {
             $this->content = $content;
         }
+    }
+
+    public function setDate($date){
+        $this->date = $date;
+        return $this;
     }
 }
