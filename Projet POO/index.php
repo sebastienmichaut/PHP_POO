@@ -22,7 +22,7 @@ $manager->create($first);*/
 ?>
 <div class="container">
   <div class="row">
-    <h1 style="background-color: rgb(0,212,255); font-weight: bold">Tous les articles</h1>
+    <h1 class="fst-italic" style="background-color: rgb(0,212,255); font-weight: bold">Tous les articles</h1>
       <?php
         $manager = new PostsManager();
         foreach ($manager->getAll() as $post) {
