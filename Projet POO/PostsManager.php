@@ -46,6 +46,14 @@ class PostsManager{
         return new Comment($data);
     }
 
+    public function getIdComment(int $id){
+        $req = $this->db->prepare("SELECT * FROM `comment` WHERE id = :id");
+        $req->bindValue(":id", $id, PDO::PARAM_INT);
+        $req->execute();
+        $data = $req->fetch();
+        return new Comment($data);
+    }
+
     public function getAll(){
         $posts = [];
         foreach ($this->db->query("SELECT * FROM `post` ORDER BY id DESC") as $data){
@@ -56,7 +64,7 @@ class PostsManager{
 
     public function getAllComment(int $id_post){
         $comments = [];
-        $req = $this->db->prepare("SELECT * FROM `comment` WHERE id_post = :id_post  ORDER BY id DESC");
+        $req = $this->db->prepare("SELECT * FROM `comment` WHERE id_post = :id_post ORDER BY id DESC");
         $req->bindValue(":id_post", $id_post, PDO::PARAM_INT);
         $req->execute();
         foreach ($req as $data){
@@ -74,9 +82,9 @@ class PostsManager{
     }
 
     public function updateComment(Comment $comment){
-        $req = $this->db->prepare("UPDATE `comment` SET content = :content WHERE id = :id");
+        $req = $this->db->prepare("UPDATE `comment` SET commentContent = :commentContent WHERE id = :id");
         $req->bindValue(":id", $comment->getId(), PDO::PARAM_INT);
-        $req->bindValue(":content", $comment->getCommentContent(), PDO::PARAM_STR);
+        $req->bindValue(":commentContent", $comment->getCommentContent(), PDO::PARAM_STR);
         $req->execute();
     }
 

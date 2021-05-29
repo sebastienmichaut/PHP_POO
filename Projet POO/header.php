@@ -22,10 +22,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active me-5" aria-current="page" href="./index.php">Revenir à la page d'accueil</a>
+          <a class="nav-link active me-5 fs-5" aria-current="page" href="./index.php">Revenir à la page d'accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./create.php">Rédiger un article</a>
+          <a class="nav-link active fs-5" aria-current="page" href="./create.php">Rédiger un article</a>
         </li>
       </ul>
     </div>
