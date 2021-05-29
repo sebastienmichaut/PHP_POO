@@ -13,10 +13,10 @@ $date = new DateTime($post->getDate());
 ?>
 <div class="container">
   <div class="row">
-    <h1>Lire un article</h1>
+    <h1 style="background-color: rgb(0,212,255); font-weight: bold">Lire un article</h1>
     <div class="card mt-3 col-xs-3 col-sm-offset-3 col-md-offset-2 col-md-7">
       <div class="card-body">
-        <h5 class="card-title"><?php echo $post->getTitle() ?></h5>
+        <h5 class="card-title" style="background-color: rgb(0,170,255); font-weight: bold"><?php echo $post->getTitle() ?></h5>
         <p class="card-text"><?php echo $post->getContent() ?></p>
         <p class="card-text fst-italic" style="font-size: 11px"><?php echo "rédigé le {$date->format('d-m-Y')} à {$date->format('H:i')} " ?></p>
         <a href="./createComment.php?id=<?php echo $post->getId() ?>" class="card-link btn btn-success"><i class="far fa-comment-dots me-2"></i>Commenter</a>
@@ -26,7 +26,7 @@ $date = new DateTime($post->getDate());
 </div>
 <div class="container">
   <div class="row">
-    <h2>Les commentaires</h2>
+    <h2 class="mt-5" style="background-color: rgb(0,212,255); font-weight: bold">Les commentaires</h2>
       <?php
       $comments = new PostsManager();
         foreach ($comments->getAllComment($_GET['id']) as $comment) {
