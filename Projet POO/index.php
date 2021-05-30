@@ -7,22 +7,14 @@ function chargerClass($class){
 spl_autoload_register("chargerClass");
 include "./header.php";
 
-//  --------------------------------------------------
-/*$data = [
-    "title" => "Mon premier article",
-    "content" => "Mon premier contenu pour tester le modèle et le contrôleur",
-];
-
-$first = new Post($data);
-$manager = new PostsManager();
-$manager->create($first);*/
-
-// --------------------------------------------------
-
+setlocale(LC_TIME, 'fr');
+echo "Nous sommes le " . strftime('%A %d %B %Y');
+date_default_timezone_set("Europe/Brussels");
+echo ", il est " . strftime('%H:%M:%S');
 ?>
 <div class="container">
   <div class="row">
-    <h1 class="fst-italic" style="background-color: rgb(0,212,255); font-weight: bold; margin-top: 20px">Tous les articles</h1>
+    <h1 class="fst-italic" style="background-color: rgb(0,212,255); font-weight: bold; margin-top: 20px; width: 58.5%">Tous les articles</h1>
       <?php
         $manager = new PostsManager();
         foreach ($manager->getAll() as $post) {

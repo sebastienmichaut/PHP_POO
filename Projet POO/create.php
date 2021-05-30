@@ -17,8 +17,8 @@ if ($_POST) {
 ?>
 <div class="container">
     <div class="row">
+        <h1 class="fst-italic" style="background-color: rgb(0,212,255); font-weight: bold; margin-top: 20px; width: 58.5%">Rédiger un article</h1>
         <div class="card mt-3 col-xs-3 col-sm-offset-3 col-md-offset-2 col-md-7">
-            <h1 class="fst-italic" style="background-color: rgb(0,212,255); font-weight: bold">Rédiger un article</h1>
             <div class="card-body">
                 <form method="post">
                     <div class="mb-3">

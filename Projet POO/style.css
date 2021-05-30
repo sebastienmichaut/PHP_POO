@@ -1,7 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url(./image/Paris.jpg);
-    background-size: cover;
 }
 
 #navbar {
@@ -15,4 +13,11 @@ h1, h2, h3, h4 {
 
 a:hover {
     font-family: 'New Rocker', cursive;
+}
+
+@media only screen and (min-width : 800px) {
+    body {
+        background-image: url(./image/Paris.jpg);
+        background-size: cover;
+    }    
 }
